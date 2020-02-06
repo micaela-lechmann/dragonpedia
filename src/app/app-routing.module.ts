@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
-import { DragonContainerComponent } from './dragon/dragon-container/dragon-container.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'auth',
+  redirectTo: 'login',
   pathMatch: 'full'
 }, 
 {
   path: 'dragon',
-  loadChildren: './dragon/dragon.module#DragonModule'
+  loadChildren: './dragon/dragon.module#DragonModule',
+  canActivate: [AuthGuardService]
 }, 
 {
-  path: 'auth',
+  path: 'login',
   component: LoginComponent
 }];
 

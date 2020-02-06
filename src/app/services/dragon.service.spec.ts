@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { DragonService } from './dragon.service';
 import { Dragon } from '../shared/models/dragon.model';
 
-fdescribe('DragonService', () => {
+describe('DragonService', () => {
   let service: DragonService;
   let httpMock: HttpTestingController;
 
