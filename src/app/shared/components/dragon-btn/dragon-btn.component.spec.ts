@@ -22,4 +22,14 @@ describe('DragonBtnComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe(('onButton click'), () => {
+    it('should emit clickBtn emitter', () => {
+      spyOn(component.clickBtn, 'emit');
+      const btn = fixture.nativeElement.querySelector('.btn__dragon');
+      btn.click();
+
+      expect(component.clickBtn.emit).toHaveBeenCalled();
+    });
+  });
 });
