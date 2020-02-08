@@ -1,1 +1,10 @@
-<p>dragon-card works!</p>
+<div class="card" *ngIf="dragon">
+    <div class="card__name">
+        {{dragon.name}}
+    </div>
+    <div class="card__actions">
+        <fa-icon [icon]="faInfoCircle" class="card__action card__info" (click)="detailDragon.emit(dragon)"></fa-icon>
+        <fa-icon [icon]="faEdit" class="card__action card__edit" (click)="editDragon.emit(dragon)"></fa-icon>
+        <fa-icon [icon]="faTrashAlt" class="card__action card__delete" (click)="deleteDragon.emit(dragon)"></fa-icon>
+    </div>
+</div>

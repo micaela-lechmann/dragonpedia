@@ -1,0 +1,27 @@
+@import '../../../../scss/variables';
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 30px;
+    margin: 5px auto;
+    border: 1px solid black 5px;
+    &__actions {
+        color: map-get($colors, "dark-gray");
+        cursor: pointer;
+    }
+    &__action {
+        padding: 0 10px;
+        &:hover {
+            color: map-get($colors, "light-gray");
+        }
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+}
