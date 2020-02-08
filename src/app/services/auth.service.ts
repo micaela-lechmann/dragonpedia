@@ -7,7 +7,7 @@ import { throwError } from 'rxjs';
 })
 export class AuthService {
   private readonly testUser: User = {
-    username: 'daenerys@drogon.com',
+    username: 'daenerys',
     password: 'dracarys',
     id: '1'
   }

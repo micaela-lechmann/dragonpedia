@@ -6,7 +6,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'login',
+  redirectTo: 'dragon',
   pathMatch: 'full'
 }, 
 {
