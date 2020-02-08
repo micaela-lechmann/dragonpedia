@@ -1,29 +1,45 @@
+@import '../../../scss/variables';
+
 .login {
-  background: #75a4a0;
+  background: map-get($colors,  "light-green");
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Montserrat";
   &__title {
     font-size: 24px;
+    text-align: center;
     margin-bottom: 5px;
   }
   &__form {
-    background-color: #fff;
+    background-color: map-get($colors,  "white-alt");
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
     width: 40%;
     border-radius: 6px;
-    padding: 1.2em 2.6em;
+    padding: 10px 30px;
   }
   &__error {
     margin-top: 15px;
   }
   &__field {
     font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .login {
+    &__title {
+      font-size: 20px;
+    }
+    &__logo {
+      width: 100px;
+    }
+    &__field {
+      font-size: 16px;
+    }
   }
 }
