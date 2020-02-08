@@ -5,6 +5,7 @@ import { DragonRegisterComponent } from './dragon-register/dragon-register.compo
 import { DragonContainerComponent } from './dragon-container/dragon-container.component';
 import { DragonEditorComponent } from './dragon-editor/dragon-editor.component';
 import { DragonDetailsComponent } from './dragon-details/dragon-details.component';
+import { DragonHomeComponent } from './dragon-home/dragon-home.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
     component: DragonContainerComponent,
     children: [
       { 
+        path: 'home',
+        component: DragonHomeComponent
+      },
+      {
         path: 'register',
         component: DragonRegisterComponent
       }, {

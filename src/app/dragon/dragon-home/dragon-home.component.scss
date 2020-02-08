@@ -1,0 +1,11 @@
+.home {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  &__title {
+    text-transform: uppercase;
+  }
+  &__title, &__subtitle, &__text {
+    margin: 20px auto;
+  }
+}
