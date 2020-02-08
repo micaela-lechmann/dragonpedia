@@ -7,7 +7,7 @@ import { DragonHeaderComponent } from './dragon-header.component';
 
 class ComponentMock {}
 
-fdescribe('DragonHeaderComponent', () => {
+describe('DragonHeaderComponent', () => {
   let component: DragonHeaderComponent;
   let fixture: ComponentFixture<DragonHeaderComponent>;
   let router: Router;

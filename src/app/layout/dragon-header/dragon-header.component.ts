@@ -12,7 +12,7 @@ export class DragonHeaderComponent {
   constructor(private authService: AuthService,
               private router: Router) { }
 
-  public onLogout() {
+  public onLogout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
