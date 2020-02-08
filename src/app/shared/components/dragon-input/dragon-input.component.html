@@ -1,0 +1,10 @@
+<div class="form-field">
+    <span class="form-field__label">{{ label }}</span>
+    <input class="form-control" [type]="type" [formControl]="control">
+    <div *ngIf="getErrorMessages().length">
+        <div class="form-field__error" *ngFor="let message of getErrorMessages()">
+            <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+            {{message}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<header class="header">
+    <div class="header__logo" [routerLink]="['/dragon/home']">
+        <img class="header__image" src="assets/img/logo.png">
+        <div class="header__title">
+            Dragonpedia
+        </div>
+    </div>
+    <div class="header__navbar">
+        <div class="header__link" id="list-route" [routerLink]="['/dragon/list']" [routerLinkActive]="'header__link--active'">
+            Dragons list</div>
+        <div class="header__link" id="register-route" [routerLink]="['/dragon/register']" [routerLinkActive]="'header__link--active'">
+            Add new dragon</div>
+        <app-dragon-btn class="header__btn" (clickBtn)="onLogout()" [content]="'Logout'">
+        </app-dragon-btn>
+    </div>
+</header>
