@@ -1,0 +1,8 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.register {
+  &__title {
+    @include title();
+  }
+}
