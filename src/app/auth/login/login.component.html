@@ -6,15 +6,15 @@
         <div class="login__title">
             Login in to your dragonpedia
         </div>
-        <app-form-input class="login__field" [label]="'Username'" [control]="loginForm.get('username')" [type]="'text'"
+        <app-dragon-input class="login__field" [label]="'Username'" [control]="loginForm.get('username')" [type]="'text'"
             [validatorsErrorMessages]="usernameErrorMessages">
-        </app-form-input>
-        <app-form-input class="login__field" [label]="'Password'" [control]="loginForm.get('password')"
-            [type]="'password'" [validatorsErrorMessages]="passwordErrorMessages"></app-form-input>
-        <div *ngIf="isCredentialsWrong" class="alert alert-danger" role="alert">
+        </app-dragon-input>
+        <app-dragon-input class="login__field" [label]="'Password'" [control]="loginForm.get('password')"
+            [type]="'password'" [validatorsErrorMessages]="passwordErrorMessages"></app-dragon-input>
+        <div *ngIf="isCredentialsWrong" class="alert alert-danger login__error" role="alert">
             Your username or password do not match.
         </div>
-        <button (click)="onLogin()" class="login__button btn">Login</button>
+        <app-dragon-btn (clickBtn)="onLogin()" [content]="'Login'"></app-dragon-btn>
     </div>
 </div>
 

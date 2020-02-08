@@ -20,16 +20,10 @@
     border-radius: 6px;
     padding: 1.2em 2.6em;
   }
+  &__error {
+    margin-top: 15px;
+  }
   &__field {
     font-size: 18px;
-    margin: 10px auto;
-  }
-  &__button {
-    width: 30%;
-    background-color: #75a4a0;
-    color: #fff;
-    &:hover {
-      font-weight: bold;
-    }
   }
 }
