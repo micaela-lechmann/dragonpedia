@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { cold, getTestScheduler } from 'jasmine-marbles';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('DragonEditorComponent', () => {
   let component: DragonEditorComponent;
@@ -33,7 +34,8 @@ describe('DragonEditorComponent', () => {
         HttpClientTestingModule,
         RouterTestingModule.withRoutes([
           { path: 'dragon/list', component: DragonListComponent }
-        ])
+        ]),
+        FontAwesomeModule
       ],
       providers: [{ provide: ActivatedRoute, useValue: routeMock }]
     })

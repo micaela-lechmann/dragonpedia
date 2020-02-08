@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { LayoutModule } from '../layout/layout.module';
 import { DragonHomeComponent } from './dragon-home/dragon-home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -20,7 +21,8 @@ import { DragonHomeComponent } from './dragon-home/dragon-home.component';
     HttpClientModule,
     DragonRoutingModule,
     SharedModule,
-    LayoutModule
+    LayoutModule,
+    FontAwesomeModule
   ]
 })
 export class DragonModule { }

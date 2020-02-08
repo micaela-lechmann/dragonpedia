@@ -9,6 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DragonListComponent } from '../dragon-list/dragon-list.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { cold, getTestScheduler } from 'jasmine-marbles';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('DragonRegisterComponent', () => {
   let component: DragonRegisterComponent;
@@ -24,7 +25,8 @@ describe('DragonRegisterComponent', () => {
         RouterTestingModule.withRoutes([
           { path: 'dragon/list', component: DragonListComponent }
         ]),
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        FontAwesomeModule
       ]
     })
       .compileComponents();
