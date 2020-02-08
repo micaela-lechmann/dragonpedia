@@ -3,8 +3,46 @@
         {{dragon.name}}
     </div>
     <div class="card__actions">
-        <fa-icon [icon]="faInfoCircle" class="card__action card__info" (click)="detailDragon.emit(dragon)"></fa-icon>
-        <fa-icon [icon]="faEdit" class="card__action card__edit" (click)="editDragon.emit(dragon)"></fa-icon>
-        <fa-icon [icon]="faTrashAlt" class="card__action card__delete" (click)="deleteDragon.emit(dragon)"></fa-icon>
+        <fa-icon 
+          [icon]="faInfoCircle" 
+          class="card__action card__info" 
+          (click)="detailDragon.emit(dragon)"
+          placement="top" 
+          ngbTooltip="More info on dragon">
+        </fa-icon>
+        <fa-icon 
+          [icon]="faEdit" 
+          class="card__action card__edit" 
+          (click)="editDragon.emit(dragon)"
+          placement="top" 
+          ngbTooltip="Edit dragon"
+          tooltipClass="card__tooltip">
+        </fa-icon>
+        <fa-icon 
+          [icon]="faTrashAlt" 
+          class="card__action card__delete" 
+          (click)="openModal(deleteModal)"
+          placement="top" 
+          ngbTooltip="Delete dragon">
+        </fa-icon>
     </div>
 </div>
+
+<ng-template #deleteModal let-modal>
+    <div>
+      <button type="button" class="close" aria-label="Close" (click)="modal.close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+       <h5>
+         Are you sure you want to delete dragon?
+       </h5> 
+      </div>
+    <div class="modal-footer">
+      <app-dragon-btn [content]="'Confirm'" (clickBtn)="onConfirmModal()"></app-dragon-btn>
+      <button type="button" class="btn" (click)="modal.close()">Cancel</button>
+    </div>
+  </ng-template>
+
+
