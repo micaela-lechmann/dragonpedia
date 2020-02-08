@@ -1,1 +1,6 @@
-<p>dragon-editor works!</p>
+<div class="editor">
+    <h3 class="editor__title">
+        Edit your dragon
+    </h3>
+    <app-dragon-form *ngIf="dragon" [dragon]="dragon" (submit)="onSubmit($event)"></app-dragon-form>
+</div>
