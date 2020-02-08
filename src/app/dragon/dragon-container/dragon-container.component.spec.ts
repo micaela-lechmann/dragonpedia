@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DragonContainerComponent } from './dragon-container.component';
+import { LayoutModule } from 'src/app/layout/layout.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DragonContainerComponent', () => {
   let component: DragonContainerComponent;
@@ -8,7 +10,11 @@ describe('DragonContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DragonContainerComponent ]
+      declarations: [ DragonContainerComponent ],
+      imports: [
+        LayoutModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
