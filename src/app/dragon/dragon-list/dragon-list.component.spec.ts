@@ -1,17 +1,17 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DragonListComponent } from './dragon-list.component';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { cold, getTestScheduler } from 'jasmine-marbles';
 import { DragonService } from 'src/app/services/dragon.service';
 import { Dragon } from 'src/app/shared/models/dragon.model';
-import { cold, getTestScheduler } from 'jasmine-marbles';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DragonEditorComponent } from '../dragon-editor/dragon-editor.component';
 import { DragonDetailsComponent } from '../dragon-details/dragon-details.component';
-import { Router } from '@angular/router';
+import { DragonEditorComponent } from '../dragon-editor/dragon-editor.component';
+import { DragonListComponent } from './dragon-list.component';
+import { DragonRegisterComponent } from '../dragon-register/dragon-register.component';
+
 
 describe('DragonListComponent', () => {
   let component: DragonListComponent;
@@ -34,13 +34,14 @@ describe('DragonListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DragonListComponent, DragonEditorComponent, DragonDetailsComponent ],
+      declarations: [ DragonListComponent, DragonEditorComponent, DragonDetailsComponent, DragonRegisterComponent ],
       imports: [
         SharedModule,
         HttpClientTestingModule,  
         RouterTestingModule.withRoutes([
           { path: 'dragon/editor/:id', component: DragonEditorComponent },
-          { path: 'dragon/details/:id', component: DragonDetailsComponent}
+          { path: 'dragon/details/:id', component: DragonDetailsComponent },
+          { path: 'dragon/register', component: DragonRegisterComponent }
         ]),
         FontAwesomeModule
       ]
@@ -141,6 +142,32 @@ describe('DragonListComponent', () => {
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(router.url).toBe('/dragon/details/1');
+        done();
+      });
+    });
+  });
+
+  describe('on empty dragon list', () => {
+    it('should show noDragons template', () => {
+      component.dragons = [];
+      component.isLoadFinished = true;
+      fixture.detectChanges();
+
+      const noDragons = fixture.nativeElement.querySelector('.no-dragons');
+      expect(noDragons).toBeTruthy();
+    });
+
+    it('should navigate to register page noDragons template', (done) => {
+      component.dragons = [];
+      component.isLoadFinished = true;
+      fixture.detectChanges();
+
+      const noDragons = fixture.nativeElement.querySelector('.no-dragons__subtitle');
+      noDragons.click();
+
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(router.url).toBe('/dragon/register');
         done();
       });
     });

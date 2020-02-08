@@ -1,6 +1,6 @@
 <div class="list">
     <h3 class="list__title">Dragons list</h3>
-    <div class="list__items">
+    <div *ngIf="dragons.length; else noDragons" class="list__items">
         <app-dragon-card 
             *ngFor="let dragon of dragons" 
             [dragon]="dragon"
@@ -10,4 +10,16 @@
         </app-dragon-card>
     </div>
 </div>
+
+<ng-template #noDragons>
+    <div *ngIf="isLoadFinished" class="no-dragons">
+        <fa-icon class="no-dragons__icon" [icon]="faFolderOpen"></fa-icon>
+        <h3 class="no-dragons__title">
+            There are not any dragons available yet. 
+        </h3>
+        <h4 [routerLink]="['/dragon/register']" class="no-dragons__subtitle">
+            Start adding some!
+        </h4>
+    </div>
+</ng-template>
 

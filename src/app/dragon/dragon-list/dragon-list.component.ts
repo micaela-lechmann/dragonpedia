@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Dragon } from '../../shared/models/dragon.model';
 import { DragonService } from '../../services/dragon.service';
 import { take } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { faFile } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-dragon-list',
@@ -12,7 +12,9 @@ import { Router } from '@angular/router';
 })
 export class DragonListComponent implements OnInit {
 
+  public readonly faFolderOpen = faFile;
   public dragons: Dragon[] = [];
+  public isLoadFinished = false;
 
   constructor(private dragonService: DragonService,
               private router: Router) { }
@@ -44,6 +46,7 @@ export class DragonListComponent implements OnInit {
           }
           return 0;
         });
+        this.isLoadFinished = true;
       });
   }
 
