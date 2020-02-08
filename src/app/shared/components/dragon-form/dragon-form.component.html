@@ -1,5 +1,7 @@
 <div class="form" [formGroup]="dragonForm">
     <app-dragon-input class="form__input" [label]="'Name'" [control]="dragonForm.get('name')" [validatorsErrorMessages]="nameErrorMessages"></app-dragon-input>
     <app-dragon-input class="form__input" [label]="'Type'" [control]="dragonForm.get('type')" [validatorsErrorMessages]="typeErrorMessages"></app-dragon-input>
-    <app-dragon-btn class="form__btn" [content]="'Submit'" (clickBtn)="onClick()"></app-dragon-btn>
+    <div class="form__btn">
+        <app-dragon-btn [content]="'Submit'" (clickBtn)="onClick()"></app-dragon-btn>
+    </div>
 </div>

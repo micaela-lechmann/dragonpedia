@@ -12,7 +12,7 @@
         <div *ngIf="isCredentialsWrong" class="alert alert-danger login__error" role="alert">
             Your username or password do not match.
         </div>
-        <app-dragon-btn (clickBtn)="onLogin()" [content]="'Login'"></app-dragon-btn>
+        <app-dragon-btn class="login__btn" (clickBtn)="onLogin()" [content]="'Login'"></app-dragon-btn>
     </div>
 </div>
 

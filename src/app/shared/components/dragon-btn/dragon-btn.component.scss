@@ -2,7 +2,6 @@
 
 .btn {
   &__dragon {
-    margin-top: 10px;
     color: map-get($colors,  "white-alt");
     background-color: map-get($colors,  "light-green");
     &:hover {
