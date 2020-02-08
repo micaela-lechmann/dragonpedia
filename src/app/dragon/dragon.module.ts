@@ -6,14 +6,21 @@ import { DragonRegisterComponent } from './dragon-register/dragon-register.compo
 import { DragonEditorComponent } from './dragon-editor/dragon-editor.component';
 import { DragonContainerComponent } from './dragon-container/dragon-container.component';
 import { DragonRoutingModule } from './dragon-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
+import { LayoutModule } from '../layout/layout.module';
+import { DragonHomeComponent } from './dragon-home/dragon-home.component';
 
 
 
 @NgModule({
-  declarations: [DragonListComponent, DragonRegisterComponent, DragonDetailsComponent, DragonEditorComponent, DragonContainerComponent],
+  declarations: [DragonListComponent, DragonRegisterComponent, DragonDetailsComponent, DragonEditorComponent, DragonContainerComponent, DragonHomeComponent],
   imports: [
     CommonModule,
-    DragonRoutingModule
+    HttpClientModule,
+    DragonRoutingModule,
+    SharedModule,
+    LayoutModule
   ]
 })
 export class DragonModule { }
