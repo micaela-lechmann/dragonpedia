@@ -1,0 +1,6 @@
+@import 'variables';
+
+@mixin title() {
+  font-weight: bold;
+  color: map-get($colors, "light-green");
+}
