@@ -13,7 +13,7 @@ import { DragonEditorComponent } from '../dragon-editor/dragon-editor.component'
 import { DragonDetailsComponent } from '../dragon-details/dragon-details.component';
 import { Router } from '@angular/router';
 
-fdescribe('DragonListComponent', () => {
+describe('DragonListComponent', () => {
   let component: DragonListComponent;
   let fixture: ComponentFixture<DragonListComponent>;
   let service: DragonService;

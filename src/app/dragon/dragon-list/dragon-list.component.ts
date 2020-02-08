@@ -21,16 +21,15 @@ export class DragonListComponent implements OnInit {
     this.setDragons();
   }
 
-  public onDetailDragon(dragon: Dragon) {
+  public onDetailDragon(dragon: Dragon): void {
     this.router.navigate([`dragon/details/${dragon.id}`])
   }
 
-  public onEditDragon(dragon: Dragon) {
+  public onEditDragon(dragon: Dragon): void {
     this.router.navigate([`dragon/editor/${dragon.id}`])
   }
 
-  public onDeleteDragon(dragon: Dragon) {
-    console.log(dragon);
+  public onDeleteDragon(dragon: Dragon): void {
     this.dragonService.deleteDragon(dragon.id).subscribe(() => this.setDragons());
   }
 
@@ -38,9 +37,9 @@ export class DragonListComponent implements OnInit {
     this.dragonService.getDragons().pipe(take(1))
       .subscribe(dragons => {
         this.dragons = dragons.sort((a, b) => {
-          if (a.name > b.name) {
+          if (a.name.toLowerCase() > b.name.toLowerCase()) {
             return 1;
-          } else if(b.name > a.name) {
+          } else if(b.name.toLowerCase() > a.name.toLowerCase()) {
             return -1
           }
           return 0;

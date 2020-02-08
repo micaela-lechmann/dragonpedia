@@ -1,12 +1,28 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
 .list {
-    width: 80%;
-    margin: 0 auto;
-    font-family: 'Montserrat';
-    &__title {
-        margin: 15px auto;
-    }
-    &__items {
-        overflow-y: auto;
-        max-height: 500px;
-    }
+  &__title {
+    @include title();
+  }
+  &__items {
+    overflow-y: auto;
+    max-height: calc(100vh - 170px);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: map-get($colors, "beige-alt");
+}
+
+::-webkit-scrollbar-thumb {
+  background: map-get($colors, "light-gray");
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: map-get($colors, "dark-gray");
 }
