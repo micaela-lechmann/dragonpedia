@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dragons-app": {
+    "dragonpedia": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dragons-app",
+            "outputPath": "dist/dragonpedia",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dragons-app:build"
+            "browserTarget": "dragonpedia:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dragons-app:build:production"
+              "browserTarget": "dragonpedia:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dragons-app:build"
+            "browserTarget": "dragonpedia:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dragons-app:serve"
+            "devServerTarget": "dragonpedia:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dragons-app:serve:production"
+              "devServerTarget": "dragonpedia:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "dragons-app"
+  "defaultProject": "dragonpedia"
 }
