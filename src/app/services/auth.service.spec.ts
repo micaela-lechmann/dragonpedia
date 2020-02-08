@@ -19,7 +19,7 @@ describe('AuthService', () => {
   describe('login', () => {
     it('should store username and return true if user credentials are right', () => {
       const rightUser: User = {
-        username: 'daenerys@drogon.com',
+        username: 'daenerys',
         password: 'dracarys'
       };
 
@@ -33,7 +33,7 @@ describe('AuthService', () => {
 
     it('should not store username and return false if user credentials are wrong', () => {
       const wrongUser: User = {
-        username: 'daenerys@dragon.com',
+        username: 'daenerys',
         password: 'dracaris'
       };
 
