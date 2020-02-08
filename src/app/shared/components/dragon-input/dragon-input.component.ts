@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, AbstractControl } from '@angular/forms';
 import { of } from 'rxjs';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,20 +14,18 @@ export class DragonInputComponent {
   public readonly faExclamationTriangle =  faExclamationTriangle;
 
   @Input()
-  control: FormControl;
+  public control: FormControl;
   @Input()
-  validatorsErrorMessages: { [error: string]: string }
+  public validatorsErrorMessages: { [error: string]: string }
   @Input()
-  label: string;
+  public label: string;
   @Input()
-  type: string;
+  public type: string;
 
-  getErrorMessages() {
+  public getErrorMessages(): string[] {
     const errorMessages = [];
     if (this.control.touched && this.control.errors) {
       const formErrors = Object.keys(this.control.errors);
-      console.log(formErrors);
-      console.log(this.validatorsErrorMessages);
       formErrors.map(error => {
         errorMessages.push(this.validatorsErrorMessages[error]);
       })

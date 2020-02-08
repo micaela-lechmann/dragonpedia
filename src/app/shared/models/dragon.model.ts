@@ -1,7 +1,7 @@
 export interface Dragon {
-    id?: string;
-    createdAt: Date;
     name: string;
     type: string;
-    histories: string[];
+    id?: string;
+    createdAt?: Date;
+    histories?: string[];
 }
