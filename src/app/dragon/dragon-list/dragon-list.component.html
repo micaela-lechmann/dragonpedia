@@ -1,1 +1,13 @@
-<p>dragon-list works!</p>
+<div class="list">
+    <h2 class="list__title">Dragons List</h2>
+    <div class="list__items">
+        <app-dragon-card 
+            *ngFor="let dragon of dragons" 
+            [dragon]="dragon"
+            (detailDragon)="onDetailDragon($event)"
+            (deleteDragon)="onDeleteDragon($event)"
+            (editDragon)="onEditDragon($event)">
+        </app-dragon-card>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+.list {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    &__title {
+        margin: 15px auto;
+    }
+    &__items {
+        overflow-y: auto;
+        max-height: 500px;
+    }
+}
