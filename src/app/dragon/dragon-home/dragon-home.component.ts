@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dragon-home',
   templateUrl: './dragon-home.component.html',
   styleUrls: ['./dragon-home.component.scss']
 })
-export class DragonHomeComponent implements OnInit {
+export class DragonHomeComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  public onClick(): void {
+    this.router.navigate(['/dragon/register']);
   }
-
 }

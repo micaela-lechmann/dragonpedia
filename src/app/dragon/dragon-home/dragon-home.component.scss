@@ -1,9 +1,13 @@
+@import '../../../scss/mixins';
+
 .home {
   text-align: center;
-  width: 80%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__title {
     text-transform: uppercase;
+    @include title();
   }
   &__title, &__subtitle, &__text {
     margin: 20px auto;
