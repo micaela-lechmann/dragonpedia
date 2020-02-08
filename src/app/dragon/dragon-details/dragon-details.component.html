@@ -1,1 +1,29 @@
-<p>dragon-details works!</p>
+<div class="detail">
+    <h3 class="detail__title">Dragon details</h3>
+    <div class="detail__card" *ngIf="dragon">
+        <div class="detail__info row">
+            <span class="detail__property col-4">Id:</span>
+            <span class="detail__value col-8">
+                {{dragon.id}}
+            </span>
+        </div>
+        <div class="detail__info row">
+            <span class="detail__property col-4">Name:</span>
+            <span class="detail__value col-8">
+                {{dragon.name}}
+            </span>
+        </div>
+        <div class="detail__info row">
+            <span class="detail__property col-4">Type:</span>
+            <span class="detail__value col-8">
+                {{dragon.type}}
+            </span>
+        </div>
+        <div class="detail__info row">
+            <span class="detail__property col-4">Created at:</span>
+            <span class="detail__value col-8">
+                {{dragon.createdAt | date: 'dd/MM/yyyy'}}
+            </span>
+        </div>
+    </div>
+</div>
