@@ -7,7 +7,7 @@ import { DragonNotFoundComponent } from './shared/components/dragon-not-found/dr
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'dragon',
+  redirectTo: 'dragon/home',
   pathMatch: 'full'
 }, 
 {
