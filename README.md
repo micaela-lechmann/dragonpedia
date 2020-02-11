@@ -14,15 +14,12 @@ Para rodar o projeto é necessário:
 
  ### Instalar e rodar aplicação 
  - Clonar o projeto: 
- <br>
  `git@github.com:micaelalechmann/dragonpedia.git`
 
  - Instalar as dependências:
- <br>
  `npm install`
  
  - Rodar o projeto: 
- <br>
  `npm run start`
 
  ### Rodando os testes unitários
