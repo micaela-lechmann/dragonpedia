@@ -2,6 +2,10 @@
 
 Aplicação desenvolvida para consulta, criação, atualização e remoção de dragões.
 
+### Credenciais para acesso
+ - Username: daenerys
+ - Password: drogon
+
 ### Pré-requisitos
 Para rodar o projeto é necessário:
 
